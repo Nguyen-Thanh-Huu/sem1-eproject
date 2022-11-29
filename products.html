@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./home/images/tiny-tots-logo.jpg" />
+    <title>TinyTots Products</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    
+    <!-- Google Font - Poppin -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Home CSS of Linh -->
+    <link rel="stylesheet" href="./home/style/home.css">
+
+    <!-- Product CSS -->
+    <link rel="stylesheet" href="./products/products.css">
+
+    <!-- AOS Animation CSS anh Linh -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css" />
+    
+    <!-- Boostrap -->
+     <!-- Bootstrap CSS anh Linh -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+   
+    
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous" />
+   
+
+     
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+     
+       <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  
+     <!-- Toastr -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+</head>
+
+<body onload="loadingProducts(); checkLogin(); checkCart();"> 
+
+
+
+  <!-- Navitation bar -->
+    <section id="navigation">
+      <nav class="navbar">
+        <div class="container">
+          <div
+            class="d-flex flex-row align-items-center justify-content-center w-100"
+          >
+            <img
+              class="logo"
+              alt="logo"
+              src="./home/images/tiny-tots-logo.jpg"
+            />
+            <div
+              class="d-flex flex-column align-items-center justify-content-center w-100"
+            >
+              <div
+                class="d-flex flex-row align-items-center justify-content-end w-100"
+              >
+                <input
+                  class="form-control mr-sm-4 w-25"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <!-- Login Button -->
+                <button
+                  type="button"
+                  class="btn login-button mr-sm-4"
+                  onclick="login()"
+                  id="user-login-button"
+                >
+                  Join Us
+                </button>
+                <!-- Logout Button -->
+                <div class="dropdown">
+                  <button
+                    class="btn login-button dropdown-toggle"
+                    type="button"
+                    id="user-logout-button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  ></button>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <a class="dropdown-item" href="#" onclick="logout()"
+                      ><i class="fas fa-sign-out-alt"></i> Log out</a
+                    >
+                  </div>
+                  <!-- END Logout button -->
+                </div>
+                <a href="./cart.html" id="cart"><i class="fas fa-shopping-cart cart-icon"></i></a>
+              </div>
+              <div
+                class="d-flex flex-row align-items-center justify-content-end w-100"
+              >
+                <div class="navbar">
+                  <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item ml-sm-5">
+                      <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item ml-sm-5">
+                      <a class="nav-link" href="./products.html">Products</a>
+                    </li>
+                    <li class="nav-item ml-sm-5">
+                      <a class="nav-link" href="./news.html">News</a>
+                    </li>
+                    <li class="nav-item ml-sm-5">
+                      <a class="nav-link" href="./franchise.html">Franchise</a>
+                    </li>
+                    <li class="nav-item ml-sm-5">
+                      <a class="nav-link" href="./contactus.html">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section> <!-- end navigation section -->
+
+
+
+
+
+<section id="brand" data-aos="fade-up">
+    <!-- start Brands section -->
+    <!-- start Brands section -->
+    <div class="container">
+      <div class="d-flex flex-column justify-content-center align-items-center brand-contain">
+        <div class="text-center">
+          <h1>BRANDS</h1>
+          <h4>Browse our full range of baby products from trusted Brands</h4> <br>
+        </div>
+        <div class="d-flex flex-row justify-content-between align-items-center brand-container">
+          <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+            <a href="#link" onclick="product('Johnson')"><img src="./products/images/brands/johnson.png"
+                class="img-brand zoom" alt=""></a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+            <a href="#link" onclick="product('Pampers')"><img src="./products/images/brands/pamper.png"
+                class="img-brand " alt=""></a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+            <a href="#link" onclick="product('Lego')"><img src="./products/images/brands/lego.png" class="img-brand"
+                alt=""></a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+            <a href="#link" onclick="product('Pigeon')"><img src="./products/images/brands/pigeon.png" class="img-brand"
+                alt=""></a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+            <a href="#link" onclick="product('Kids')"><img src="./products/images/brands/kids.png" class="img-brand"
+                alt=""></a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+            <a href="#link" onclick="product('Baby Comfy')"><img src="./products/images/brands/babycomfy.png"
+                class="img-brand" alt=""></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section> <!-- end Brands section -->
+
+  <section id="category" data-aos="fade-up">
+    <!-- start Categories section -->
+    <div class="container">
+      <div class="d-flex flex-column justify-content-center align-items-center category-contain">
+        <div class="text-center">
+          <h1>ALL CATEGORIES</h1>
+          <h4>Browse our full categories of baby products</h4>
+          <br>
+        </div>
+        <div class="d-flex flex-row justify-content-between align-items-center brand-container">
+          <div class="col-md-3 col-sm-6 col-xs-12 category " onclick="product('Baby Care')">
+            <a href="#link" onclick="product('Baby Care')">Baby Care</a>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 category" onclick="product('Fashion')">
+            <a href="#link" onclick="product('Fashion')">Fashion</a>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 category" onclick="product('Toys')">
+            <a href="#link" onclick="product('Toy')">Toys</a>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 category" onclick="product('Wellness and Hygiene')">
+            <a href="#link" onclick="product('Wellness and Hygiene')">Wellness and Hygiene</a>
+          </div>
+        </div>
+      </div>
+  </section> <!-- End Categories section -->
+
+  
+  <section data-aos="fade-up"> <!-- Start Products link section -->
+    <div class="container div-contain1" id="link">
+      <ul class="breadcrumb">
+        <li><a onclick="loadingProducts()" href="#">OUR PRODUCTS / </a></li>
+        <li class="active" id="active_page"> </li>
+      </ul>
+      </div>
+  </section> <!-- End Products links section -->
+
+  <section> <!--  start product cards section-->
+    <div class="container" > 
+      <div class="row">
+      <div class="content_product row d-flex flex-wrap text-center" id="product-list"></div>
+    </div>
+  </section> <!-- End Products cards section -->
+ 
+
+  </section><!-- Comparing modal -->
+  <section id="comparing-modal">
+    <div class="container modal-content">
+      <span id="compare-modal-close">&times;</span>
+      <table class="table comparing-table">
+        <thead></thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td id="compare-photo-1"></td>
+            <td id="compare-photo-2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Product Name</th>
+            <td id="compare-name-1"></td>
+            <td id="compare-name-2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Category</th>
+            <td id="compare-category-1"></td>
+            <td id="compare-category-2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Brand</th>
+            <td id="compare-brand-1"></td>
+            <td id="compare-brand-2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td id="compare-price-1"></td>
+            <td id="compare-price-2"></td>
+          </tr>
+        </tbody>
+      </table>      
+    </div>
+  </section>  <!-- End comparing section -->
+
+
+   <!-- Login modal -->
+    <section id="login-modal">
+      <div class="container modal-content">
+        <span id="login-modal-close">&times;</span>
+
+        <div class="modal-body">
+          <div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a
+                  href="#logInTab"
+                  aria-controls="logInTab"
+                  role="tab"
+                  data-toggle="tab"
+                  class="login-tab"
+                  >Log In</a
+                >
+              </li>
+              <li role="presentation">
+                <a
+                  href="#registerTab"
+                  aria-controls="registerTab"
+                  role="tab"
+                  data-toggle="tab"
+                  class="login-tab"
+                  >Register</a
+                >
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <!-- BEGIN Log In Tab -->
+              <div role="tabpanel" class="tab-pane active" id="logInTab">
+                <form id="login-validation" novalidate>
+                  <div class="form-group">
+                    <label id="username-login-label" for="login-modal-username"
+                      >Username (*)</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="login-modal-username"
+                      aria-describedby="usernameModal"
+                      placeholder="Username"
+                      value=""
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label id="password-login-label" for="login-modal-password"
+                      >Password (*)</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="login-modal-password"
+                      placeholder="Password"
+                      value=""
+                      required
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center">
+                    <button
+                      type="submit"
+                      class="btn login-button mr-sm-4"
+                      id="login-modal-submit"
+                      onclick="loginValidate()"
+                    >
+                      Login
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- END Log In Tab -->
+
+              <!-- BEGIN Registration Tab -->
+              <div role="tabpanel" class="tab-pane" id="registerTab">
+                <form id="register-validation" novalidate>
+                  <div class="form-group">
+                    <label
+                      id="username-register-label"
+                      for="register-modal-username"
+                      >Username (*)</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="register-modal-username"
+                      aria-describedby="usernameModal"
+                      placeholder="Username"
+                      value=""
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label id="email-register-label" for="register-modal-email"
+                      >Email (*)</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="register-modal-email"
+                      aria-describedby="emailModal"
+                      placeholder="Email"
+                      value=""
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label
+                      id="pass1-register-label"
+                      for="register-modal-password"
+                      >Password (*)</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="register-modal-password"
+                      placeholder="Password"
+                      value=""
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label
+                      id="pass2-register-label"
+                      for="register-modal-password2"
+                      >Retype Password (*)</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="register-modal-password2"
+                      placeholder="Re-type Password"
+                      value=""
+                      required
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center">
+                    <button
+                      type="submit"
+                      class="btn login-button mr-sm-4"
+                      id="register-modal-submit"
+                    >
+                      Register
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- END Registration Tab -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End login section -->
+
+
+   <!-- Footer from homepage -->
+   <!-- Footer -->
+   <section id="footer">
+    <div class="container-fluid footer-background">
+      <div class="container">
+        <div class="d-flex flex-row justify-content-center">
+          <div class="col-sm-3 justify-content-begin align-items-start">
+            <div class="d-flex flex-column justify-content-center align-items-begin">
+              <img alt="footer-logo" src="./home/images/tiny-tots-logo.png" class="footer-logo">                                    
+            </div> 
+          </div>
+          <div class="col-sm-3 justify-content-begin align-items-center">
+            <p class="footer-header">Address</p>
+            <p class="footer-info">1 Phan Dang Luu Street, Hai Chau District,
+              Danang City, Vietnam
+            </p>
+          </div>
+          <div class="col-sm-3 justify-content-begin align-items-center">
+            <p class="footer-header">Contact</p>
+            <p class="footer-info">Email: info@tinytots.com</p>
+            <p class="footer-info">Hotline: +84 236 3681 666</p>
+            <p class="footer-info">Fax: +84 236 3681 777</p>              
+          </div>
+          <div class="col-sm-3 justify-content-begin align-items-center">
+            <p class="footer-header">Links</p>
+            <div class="d-flex flex-row justify-content-center align-items-start">
+              <div class="col-sm-6 justify-content-begin align-items-center">
+              <p class="footer-info"><a href="index.html" class="footer-link">Home</a></p>
+              <p class="footer-info"><a href="products.html" class="footer-link">Products</a></p>
+              <p class="footer-info"><a href="news.html" class="footer-link">News</a></p>
+              </div>
+              <div class="col-sm-6 justify-content-begin align-items-center">
+                <p class="footer-info"><a href="franchise.html" class="footer-link">Franchise</a></p>
+                <p class="footer-info"><a href="contactus.html" class="footer-link">Contact Us</a></p>
+              </div>
+            </div>             
+          </div>
+        </div>
+        <div class="d-flex flex-row justify-content-between align-items-center" style="margin-top: 1rem;">
+          <div class="d-flex">
+            <p class="footer-info">	&copy; Copyright 2020 by Team</p>
+          </div>
+          <div class="d-flex">
+            <p class="footer-icon">
+              <i class="fab fa-facebook-square"></i
+              ><i class="fab fa-twitter-square"></i
+              ><i class="fab fa-instagram-square"></i
+              ><i class="fab fa-youtube-square"></i>
+            </p>
+          </div>
+        </div>          
+      </div>
+    </div>
+</section> <!-- End Footer -->
+
+
+
+   
+ <!-- AOS Animation JS -->
+ <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+
+ <!-- Toastr -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+ <!-- User-defined JS -->
+  <script src="./home/js/home.js"></script>
+  <script src="./products/products.js"></script>
+  <!-- <script src="./products/home.js"></script> -->
+  <script src="./cart/cart.js"></script>
+  <script src="./productdetail/productdetail.js"></script>
+  <script src="./home/js/login.js"></script>
+</body>
+</html>

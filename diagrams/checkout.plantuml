@@ -1,0 +1,24 @@
+@startuml
+scale 1.5
+start
+:Products Page;
+partition Cart {
+split
+	:Add a product to cart;
+split again
+	:Check a product detail;
+	:Add the product to cart;
+split again
+	:Filter products;
+	:Add a product to cart;
+end split	
+}
+partition Checkout {
+:Checkout Page;
+:Check log in status\nbefore checking out;		
+:User provide shipping information;
+:User choose payment method;
+:Checkout;		
+}
+stop
+@enduml

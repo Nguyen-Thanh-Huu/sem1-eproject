@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+/* Navigation */
+
+nav.navbar {
+  height: 20vh;
+}
+
+.logo {
+  width: 110px;
+  height: 110px;
+}
+
+.cart-icon {
+  font-size: 1.5rem;
+  color: rgb(255, 102, 112);
+}
+
+#cart:hover {
+  text-decoration: none;
+}
+
+.cart-category {
+  text-decoration: none;
+  text-align: center;
+  color: #029899;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.login-button {
+  background-color: rgb(255, 102, 112);
+  color: whitesmoke;
+  margin-right: 1rem;
+}
+
+a.nav-link {
+  color: #029899;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+a.nav-link:hover {
+  cursor: pointer;
+  color: rgb(255, 102, 112);
+}
+
+/* News */
+#top-news {
+  margin-top: 3rem;
+}
+
+.left-block {
+  margin-right: 1.3rem;
+  margin-top: 0.3rem;
+  width: 45%;
+}
+
+.video-news {
+  width: 100%;
+}
+
+.media-body > small {
+  font-size: 10rem;
+}
+
+.right-block {
+  padding-left: 1rem;
+  border-left: solid black 0.05rem;
+  width: 55%;
+}
+
+.card {
+  width: 47%;
+  margin: 0.3rem 0.3rem;
+}
+
+.card-img-top {
+  height: 25vh;
+}
+
+/* Footer */
+
+.footer-background {
+  margin: 0;
+  margin-top: 6rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+  background: url(../../home/images/footer-background.jpg);
+}
+
+.footer-header {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ff6a5f;
+}
+
+.footer-list {
+  list-style-type: none;
+}
+
+.footer-link {
+  color: #ff6a5f;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0rem -0.7rem;
+}
+
+.footer-link:link {
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #029899;
+}
+
+.footer-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.footer-logo-text {
+  width: 70%;
+}
+
+.footer-info {
+  font-size: 0.8rem;
+  color: #ff6a5f;
+  margin: 0;
+}
+
+.footer-icon {
+  font-size: 1.5rem;
+  letter-spacing: 1rem;
+  color: #ff6a5f;
+}
+
+.footer-icon i:hover {
+  cursor: pointer;
+  color: #029899;
+}
+
+/* Login modal */
+
+#login-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 20; /* Sit on top */
+  padding-top: 60px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.nav-tabs {
+  margin-bottom: 1rem;
+}
+
+.login-tab {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #ff6a5f;
+  margin: 1rem;
+}
+
+.login-tab:hover {
+  text-decoration: none;
+  color: #029899;
+  margin: 1rem;
+  border-bottom: solid;
+  border-width: 0.2rem;
+  border-color: #029899;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 8px;
+  border: 1px solid #888;
+  width: 30% !important;
+}
+
+#login-modal-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#login-modal-close:hover,
+#login-modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#login-modal-submit {
+  padding: 0.5rem 4rem;
+}
+
+#register-modal-submit {
+  padding: 0.5rem 4rem;
+}
+
+#user-login-button {
+  display: block;
+}
+
+#user-logout-button {
+  display: none;
+}
